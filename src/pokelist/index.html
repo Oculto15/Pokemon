@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeProject | PokeList</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- HTML to build a product card -->
+    <template id="pokemon-card-template">
+      <div class="poke-border">
+        <!-- <img class="icon-abso"  alt="icon"> -->
+        <li class="pokemon-card">
+          <a href="../pokedetails/index.html?pokemon=">
+            <div class="img-cont">
+              <img id="artwork" src="" alt="Image of " />
+            </div>
+            <h3 class="card__brand"></h3>
+            <div class="box-name">
+              <h2 class="card__name"></h2>
+            </div>
+          </a>
+        </li>
+      </div>
+    </template>
+    <script src="../js/poke-listing.js" type="module"></script>
+  </head>
+
+  <body id="pokelist-back">
+    <header class="divider" id="main-header"></header>
+    <main class="divider">
+      <section class="pokemon">
+        <div class="center-title">
+          <h2 class="poke-type-list"><span class="title"></span></h2>
+        </div>
+        <ul class="pokemon-list">
+          <!-- products will go here -->
+        </ul>
+      </section>
+    </main>
+    <footer id="main-footer"></footer>
+  </body>
+</html>
