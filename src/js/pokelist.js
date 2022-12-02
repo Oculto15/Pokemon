@@ -16,8 +16,7 @@ export default class PokeList {
         const list = await this.dataSource.getData(this.type);
 
         // Get a list of pokemon from the datasource
-        const pokename = await list.map((item) => item.pokemon );
-        console.log(pokename);
+        const pokename = await list.map((item) => item.pokemon);
 
         // Create a list of pokemon based on that name
         const newList = await this.dataSource.getPokemonList(pokename);
@@ -36,14 +35,11 @@ export default class PokeList {
 
     prepareTemplate(template, pokemon) {
 
-        console.log(pokemon);
-        console.log(window.location.href.split('=')[1]);
         if (window.location.href.split('=')[1] == 'fire'){
             var image = document.createElement("img");
             image.setAttribute('src',"../images/fire-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'flying'){
@@ -51,7 +47,6 @@ export default class PokeList {
             image.setAttribute('src',"../images/flying-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'ice'){
@@ -59,7 +54,6 @@ export default class PokeList {
             image.setAttribute('src',"../images/ice-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'water'){
@@ -67,7 +61,6 @@ export default class PokeList {
             image.setAttribute('src',"../images/water-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'ghost'){
@@ -75,7 +68,6 @@ export default class PokeList {
             image.setAttribute('src',"../images/ghost-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'fighting'){
@@ -83,7 +75,6 @@ export default class PokeList {
             image.setAttribute('src',"../images/fighting-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'normal'){
@@ -91,7 +82,7 @@ export default class PokeList {
             image.setAttribute('src',"../images/normal-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
+            
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'psychic'){
@@ -99,7 +90,7 @@ export default class PokeList {
             image.setAttribute('src',"../images/psychic-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
+            
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'dark'){
@@ -107,7 +98,7 @@ export default class PokeList {
             image.setAttribute('src',"../images/dark-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
+            
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'steel'){
@@ -115,7 +106,7 @@ export default class PokeList {
             image.setAttribute('src',"../images/steel-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
+            
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'fairy'){
@@ -123,7 +114,7 @@ export default class PokeList {
             image.setAttribute('src',"../images/fairy-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
+            
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'bug'){
@@ -131,7 +122,7 @@ export default class PokeList {
             image.setAttribute('src',"../images/bug-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
+            
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'electric'){
@@ -139,7 +130,7 @@ export default class PokeList {
             image.setAttribute('src',"../images/electric-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
+            
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'dragon'){
@@ -147,7 +138,7 @@ export default class PokeList {
             image.setAttribute('src',"../images/dragon-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
+            
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'grass'){
@@ -155,7 +146,7 @@ export default class PokeList {
             image.setAttribute('src',"../images/grass-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
+            
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'poison'){
@@ -163,7 +154,7 @@ export default class PokeList {
             image.setAttribute('src',"../images/poison-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
+            
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'ground'){
@@ -171,7 +162,7 @@ export default class PokeList {
             image.setAttribute('src',"../images/ground-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
+            
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'rock'){
@@ -179,7 +170,7 @@ export default class PokeList {
             image.setAttribute('src',"../images/rock-icon.png");
             image.classList.add("icon-abso");
             var getDiv = template.querySelector('.poke-border');
-            console.log('hello');
+            
             getDiv.appendChild(image);
         }
         
@@ -187,7 +178,6 @@ export default class PokeList {
         template.querySelector('li').classList.add(window.location.href.split('=')[1]);
         // template.querySelector('li').classList.add(pokemon.types[0].type.name); use this when you search for name
         template.querySelector('a').href += pokemon.id;
-        console.log(pokemon['sprites']['other']['official-artwork']);
         template.getElementById('artwork').src = pokemon['sprites']['other']['official-artwork']['front_default'];
         template.getElementById('artwork').alt += pokemon.name;
         // if(pokemon.types.length > 1) {
