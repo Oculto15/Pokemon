@@ -2,7 +2,7 @@ const baseURL = 'https://pokeapi.co/api/v2/'
 
 async function convertToJson(res) {
     const response = await res.json();
-    console.log(response);
+
     //const JsonResp = JSON.stringify(response);
     if (res.ok) {
         return response;
@@ -35,7 +35,6 @@ export default class ExternalServices {
     async getPokemonList(list)
     {
         const newList = await Promise.all(list.map((pokemon) => this.findPokemonById(pokemon.name)));
-        console.log(newList);
         return newList;
     }
 

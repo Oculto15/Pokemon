@@ -37,64 +37,30 @@ export default class PokeDetails {
     else{
       addButton.style.display = 'block';
     }
-
-    // add listener to My Team button
-    // document.getElementById('addToCart')
-    //     .addEventListener('click', this.addToCart.bind(this));
   }
-  // addToCart() {
-  //     const cartanim = document.querySelector('#cart-animation');
-  //     cartanim.classList.add('cart-animate');
-  //     // setInterval(cartanim.classList.remove('cart-animate'), 2000);
-  //     // clearInterval();
-  //     setTimeout(function () {
-  //         cartanim.classList.remove('cart-animate')
-  //     }, 2000);
-  //     // to fix the cart we need to get anything that is in the cart already.
-  //     let cartContents = getLocalStorage('so-cart');
-  //     //check to see if there was anything there
-  //     if (!cartContents) {
-  //         cartContents = [];
-  //     }
-  //     // then add the current pokemon to the list
-  //     cartContents.push(this.pokemon);
-  //     setLocalStorage('so-cart', cartContents);
-  //     updateCartNumber();
 
-  // }
   renderPokeDetails() {
     
+    // Image path to gif
+    // <img src="${this.pokemon['sprites']['versions']['generation-v']['black-white']['animated']['front_default']}" alt="${this.pokemon.name}"/>
     return `<section class="pokemon-detail">
-      <h1 class="divider">${this.pokemon.name.replace("-", " ")}</h1>
- 
-      <img
-      class="divider" style="background-image: linear-gradient(135deg, var(--${
-        this.types[0]
-      }) 50%,  var(--${this.types[1]}) 50%);"
-      src="${
-        this.pokemon["sprites"]["other"]["official-artwork"]["front_default"]
-      }"
-      alt="${this.pokemon.name}"
-      />
+      <h1 class="divider">${this.pokemon.name.replace('-', ' ')}</h1>
+      <div class='imagenB'>
+      <img src="${this.pokemon['sprites']['other']['official-artwork']['front_default']}" alt="${this.pokemon.name}" style="background-image: linear-gradient(135deg, var(--${this.types[0]}) 50%,  var(--${this.types[1]}) 50%);"/>
+      </div>
       
-      <p class="pokemon-card__abilities">${this.abilities}</p>
+      <p>Abilities: <span class="pokemon-card__abilities">${this.abilities}</span></p>
 
-      <p class="pokemon__types Type ${this.types[0]}">${this.types[0]}</p>
-      <p class="pokemon__types Type ${this.types[1]}">${this.types[1]}</p>
+      <div class='tipos'> <p>Type: <span class="pokemon__types Type ${this.types[0]}">${this.types[0]}</span>
+      <span class="pokemon__types Type ${this.types[1]}">${this.types[1]}</span>
+      </p>
+      </div>
 
       <div id="container">
       <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
       </div>
-      <ul class="stats">
-        <li>HP: ${this.stats[0]}</li>
-        <li>Attack: ${this.stats[1]}</li>
-        <li>Defense: ${this.stats[2]}</li>
-        <li>Spe. Attack: ${this.stats[3]}</li>
-        <li>Spe. Defense: ${this.stats[4]}</li>
-        <li>Speed: ${this.stats[5]}</li>
-      </ul>
       
-      <p class="pokemon__description">${this.pokemon.name.replace("-", " ")}</p>
+      <p class="pokemon__description">The description goes here</p>
       <div class="pokemon-detail__add">
       <button  id="addToTeam" data-id="${this.pokemon.Id}" class="${
       this.types[0]
@@ -106,33 +72,21 @@ export default class PokeDetails {
 
   renderPokeDetail() {
     return `<section class="pokemon-detail"> 
-      <h1 class="divider">${this.pokemon.name.replace("-", " ")}</h1>
-      <img
-        class="divider ${this.types[0]}"
-        src="${
-          this.pokemon["sprites"]["other"]["official-artwork"]["front_default"]
-        }"
-        alt="${this.pokemon.name}"
-      />
-      <p>Abilities: <span class="pokemon-card__abilities">${
-        this.abilities
-      }</span></p>
-
-      <p>Type: <span class="pokemon__types Type ${this.types[0]}">${
-      this.types[0]
-    }</p>
+      <h1 class="divider">${this.pokemon.name.replace('-', ' ')}</h1>
+      <div class='imagenB'>
+      <img class="${this.types[0]}" src="${this.pokemon['sprites']['other']['official-artwork']['front_default']}" alt="${this.pokemon.name}"/>
+      </div>
       
-      <div id="container"></div>
-      <ul class="stats">
-        <li>${this.statsNames[0]}: ${this.stats[0]}</li>
-        <li>Attack: ${this.stats[1]}</li>
-        <li>Defense: ${this.stats[2]}</li>
-        <li>Spe. Attack: ${this.stats[3]}</li>
-        <li>Spe. Defense: ${this.stats[4]}</li>
-        <li>Speed: ${this.stats[5]}</li>
-      </ul>
+      <p>Abilities: <span class="pokemon-card__abilities">${this.abilities}</span></p>
 
-      // <p class="pokemon__description">${this.pokemon.name}</p>
+      <div class='tipos'> <p>Type: <span class="pokemon__types Type ${this.types[0]}">${this.types[0]}</span>
+      </p></div>
+
+      <div id="container">
+      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+      </div>
+
+      <p class="pokemon__description">The description goes here</p>
       <div class="pokemon-detail__add">
       <button id="addToTeam" data-id="${this.pokemon.Id}" class="${
       this.types[0]
@@ -144,7 +98,7 @@ export default class PokeDetails {
 
   getPokeAbilities() {
     this.abilities = this.pokemon.abilities.map((item) =>
-      item.ability.name.replace("-", " ")
+      item.ability.name.replace('-', ' ')
     );
   }
 
@@ -171,47 +125,9 @@ export default class PokeDetails {
   getPokeStats() {
     this.stats = this.pokemon.stats.map((item) => item.base_stat);
     this.statsNames = this.pokemon.stats.map((item) =>
-      item.stat.name.replace("-", " ")
+      item.stat.name.replace('-', ' ')
     );
-  }
-
-  getStats() {
     return this.stats;
-  }
-
-  graphStats() {
-    const xValues = [
-      "HP",
-      "Attack",
-      "Defense",
-      "Sp. Attack",
-      "Sp. Defense",
-      "Speed",
-    ];
-    const yValues = [43, 45, 200, 34, 180, 140, 0];
-    const barColors = ["red", "green", "blue", "orange", "brown", "purple"];
-
-    new Chart(document.getElementById("myChart"), {
-      type: "horizontalBar",
-      data: {
-        labels: xValues,
-        datasets: [
-          {
-            backgroundColor: barColors,
-            data: yValues,
-          },
-        ],
-      },
-      options: {
-        legend: {
-          display: false,
-        },
-        title: {
-          display: true,
-          text: "Stats",
-        },
-      },
-    });
   }
 
   renderList(list, template, outputId) {
