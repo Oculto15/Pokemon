@@ -1,3 +1,5 @@
+import { auth, provider } from './firebase'
+
 function convertToText(res) {
     if (res.ok) {
         return res.text();
@@ -48,6 +50,30 @@ export async function loadHeaderFooter() {
     renderWithTemplate(header, headerElement);
     renderWithTemplate(footer, footerElement);
     const pokeBall = document.getElementById('pokeball-animation');
+    const firstName = document.getElementById('firstName');
+    const logOutUser = document.getElementById('logOut');
+    const userName = window.localStorage.getItem('user');
+    // console.log(userName);
+    if (userName){
+        firstName.innerHTML = userName;
+        logOutUser.innerHTML = "Log Out";
+        logOutUser.addEventListener("click", logOut);
+    }
+
+    pokeBall.addEventListener("click", singIn);
+  
+}
+
+const singIn = ()=>{
+    auth.signInWithPopup(provider).then(result => {
+        window.localStorage.setItem('id',result.user.uid);
+        window.localStorage.setItem('user', result.user.displayName.split(" ")[0])
+        // window.location.href = "http://localhost:5173/poketeam/";
+    })
+}
+
+const logOut = ()=>{
+    auth.signOut()
 }
 
 export function renderListWithTemplate(template, parent, list, callback) {

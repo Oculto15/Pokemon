@@ -1,4 +1,10 @@
 import { loadHeaderFooter } from "./utils.js";
+import { db } from "./firebase";
+const id = window.localStorage.getItem('id');
+// const addButton = document.getElementById('addToTeam');
+let pokemonId = 0;
+let pokemonType = '';
+let addButton = null;
 
 loadHeaderFooter();
 export default class PokeDetails {
@@ -11,21 +17,30 @@ export default class PokeDetails {
   }
   async init() {
     this.pokemon = await this.dataSource.findPokemonById(this.pokemonId);
-    console.log(this.pokemon);
+    pokemonId = this.pokemon.id;
+    pokemonType = this.pokemon.types[0].type.name;
     this.getPokeAbilities();
     this.getPokeTypes();
     this.getPokeStats();
-    console.log(this.abilities);
-    console.log(this.types);
-    console.log(this.stats);
     if (this.types.length > 1) {
       document.querySelector("main").innerHTML = this.renderPokeDetails();
+      addButton = document.getElementById('addToTeam');
+      addButton.addEventListener('click', addPokemon);
     } else {
       document.querySelector("main").innerHTML = this.renderPokeDetail();
+      addButton = document.getElementById('addToTeam');
+      addButton.addEventListener('click', addPokemon);
+    }
+    if(!id){
+      addButton.style.display = 'none';
+    }
+    else{
+      addButton.style.display = 'block';
     }
   }
 
   renderPokeDetails() {
+    
     // Image path to gif
     // <img src="${this.pokemon['sprites']['versions']['generation-v']['black-white']['animated']['front_default']}" alt="${this.pokemon.name}"/>
     return `<section class="pokemon-detail">
@@ -47,7 +62,7 @@ export default class PokeDetails {
       
       <p class="pokemon__description">The description goes here</p>
       <div class="pokemon-detail__add">
-      <button  id="addToCart" data-id="${this.pokemon.Id}" class="${
+      <button  id="addToTeam" data-id="${this.pokemon.Id}" class="${
       this.types[0]
     } glow-button">
       <span>Add to Team</span>
@@ -73,7 +88,7 @@ export default class PokeDetails {
 
       <p class="pokemon__description">The description goes here</p>
       <div class="pokemon-detail__add">
-      <button id="addToCart" data-id="${this.pokemon.Id}" class="${
+      <button id="addToTeam" data-id="${this.pokemon.Id}" class="${
       this.types[0]
     } glow-button">
       <span>Add to Team</span>
@@ -122,4 +137,11 @@ export default class PokeDetails {
     const htmlString = list.map((item) => template(item));
     element.innerHTML = htmlString.join("");
   }
+
+}
+
+
+async function addPokemon(){
+  console.log(pokemonType);
+  await db.collection('users').doc(id).collection('team').doc(String(pokemonId)).set({pokemonId : pokemonId, pokemonType : pokemonType});
 }
