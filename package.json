@@ -33,6 +33,6 @@
     "last 3 safari versions"
   ],
   "dependencies": {
-    "firebase": "^9.14.0"
+    "firebase": "^8.10.1"
   }
 }
