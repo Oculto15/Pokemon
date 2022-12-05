@@ -76,8 +76,7 @@ const singIn = ()=>{
 const logOut = ()=>{
     auth.signOut()
     window.localStorage.setItem('user', '');
-    document.getElementById('logOut').style.color = 'green';
-    // logOutUser.innerHTML.style.display = 'none';
+    document.getElementById('logOutText').text = 'none';
     window.location.href = "http://localhost:5173";
 }
 
