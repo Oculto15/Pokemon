@@ -62,10 +62,8 @@ export default class PokeDetails {
       
       <p class="pokemon__description">The description goes here</p>
       <div class="pokemon-detail__add">
-      <button  id="addToTeam" data-id="${this.pokemon.Id}" class="${
-      this.types[0]
-    } glow-button">
-      <span>Add to Team</span>
+      <button  id="addToTeam" data-id="${this.pokemon.Id}" class="glow-button">
+      <span class='btnText'>Add to Team</span>
       </button>
       </div></section>`;
   }
@@ -88,10 +86,8 @@ export default class PokeDetails {
 
       <p class="pokemon__description">The description goes here</p>
       <div class="pokemon-detail__add">
-      <button id="addToTeam" data-id="${this.pokemon.Id}" class="${
-      this.types[0]
-    } glow-button">
-      <span>Add to Team</span>
+      <button id="addToTeam" data-id="${this.pokemon.Id}" class="glow-button">
+      <span class='btnText'>Add to Team</span>
       </button>
       </div></section>`;
   }
