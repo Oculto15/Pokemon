@@ -67,6 +67,13 @@ header {
     padding: 0 10px;
 }
 
+/* MyTeam icon styles */
+#pokeball-animation {
+    filter: drop-shadow(0 -2mm 2mm  crimson);
+}
+
+
+
 /* Logo styling */
 .logo {
 
