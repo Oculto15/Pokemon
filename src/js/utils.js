@@ -52,11 +52,12 @@ export async function loadHeaderFooter() {
     const pokeBall = document.getElementById('pokeball-animation');
     const firstName = document.getElementById('firstName');
     const logOutUser = document.getElementById('logOut');
+    const logOutText = document.getElementById('logOutText');
     const userName = window.localStorage.getItem('user');
     // console.log(userName);
     if (userName){
         firstName.innerHTML = userName;
-        logOutUser.innerHTML = "Log Out";
+        logOutText.innerHTML = "Log Out";
         logOutUser.addEventListener("click", logOut);
     }
 
@@ -67,13 +68,16 @@ export async function loadHeaderFooter() {
 const singIn = ()=>{
     auth.signInWithPopup(provider).then(result => {
         window.localStorage.setItem('id',result.user.uid);
-        window.localStorage.setItem('user', result.user.displayName.split(" ")[0])
+        window.localStorage.setItem('user', result.user.displayName.split(" ")[0]);
         window.location.href = "http://localhost:5173/poketeam/";
     })
 }
 
 const logOut = ()=>{
     auth.signOut()
+    window.localStorage.setItem('user', '');
+    document.getElementById('logOut').style.color = 'green';
+    // logOutUser.innerHTML.style.display = 'none';
     window.location.href = "http://localhost:5173";
 }
 
