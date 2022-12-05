@@ -33,7 +33,7 @@ async function grabData(id){
     // const pokemonName = data.name;
     console.log(`This is our data ${data.name}`);
     return data.name;
-
+}
 
 async function displayTeam() {
     const pokemons = await getTeam();
