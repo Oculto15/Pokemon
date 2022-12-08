@@ -46,14 +46,21 @@ body {
 }
 
 #pokelist-back {
-    background-image: url("../images/poke-background.jpeg");
-    background-color: #cccccc;
+    background: url("../images/poke-background.jpeg");
 }
 
 main {
     min-height: 700px;
     padding: 10px;
     margin: auto;
+    background: url("../images/Background-Pokeball.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+#main-title {
+    text-transform: none;
 }
 
 img {
@@ -64,6 +71,18 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 0 10px;
+}
+
+/* Main page style */
+
+.searchName {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchName input {
+    min-height: 30px;
+    margin: 10px;
 }
 
 /* MyTeam icon styles */
@@ -82,7 +101,6 @@ header {
     display: flex;
     font-size: 30px;
     text-align: right;
-
 }
 
 .logo img {
@@ -105,9 +123,7 @@ button {
     background-color: var(--secondary-color);
     color: white;
     margin: auto;
-    display: block;
     border: 0;
-    font-size: var(--large-font);
 }
 
 .glow-button {
@@ -116,17 +132,19 @@ button {
     background: linear-gradient(180deg, rgba(210,11,0,1) 45%, rgba(0,0,0,1) 45% 55%, rgba(255,255,255,1) 55%);
     color: grey;
     margin: auto;
-    display: block;
     border: 2px solid black;
     border-radius: 50px;
-    font-size: var(--large-font);
     /* box-shadow: inset -10px 10px 0 10px #ccc; */
+}
+
+.logOut {
+
 }
 
 .btnText {
     background: white;
     color: #000;
-    padding: 2.5px 4px;
+    padding: 1.75px 4px;
     margin: 5px;
     border: 2px solid black;
     border-radius: 20px;
@@ -468,7 +486,7 @@ canvas {
 }
 
 #myChart {
-    background: white;
+    background: rgba(255, 255, 255, 0.401);
 }
 
 @media screen and (min-width: 600px) {
