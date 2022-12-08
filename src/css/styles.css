@@ -366,7 +366,15 @@ label {
     z-index: 100;
     width: 35px;
     top: 16px;
-    left: 18px;
+    left: 16px;
+}
+
+.icon-abso2 {
+    position: absolute;
+    z-index: 100;
+    width: 35px;
+    top: 214px;
+    right: 16px;
 }
 
 .img-cont {
@@ -434,7 +442,7 @@ label {
 }
 
 .box-name {
-    background-color: #ffffff96;
+    background-color: #ffffff;
     width: 200px;
     border-radius: 7px;
     margin: auto;
@@ -454,7 +462,8 @@ label {
 }
 
 .pokemon-card h2 {
-    color: rgb(118, 110, 110);
+    /* color: rgb(118, 110, 110); */
+    color: #333;
     text-align: center;
 }
 
@@ -498,6 +507,11 @@ canvas {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    #searchName {
+        margin: auto;
+        width: 50%;
     }
 }
 
