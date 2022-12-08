@@ -91,7 +91,6 @@ header {
 }
 
 
-
 /* Logo styling */
 .logo {
 
@@ -508,9 +507,27 @@ footer {
 }
 
 /* My team styles */
+#poketeam-back {
+    background-image: url(/images/poke-background.jpeg);
+    background-color: #cccccc;
+}
+
+.trainer-card {
+    display: grid;
+}
+.myTeam::before {
+    animation:infinite;
+}
+
 .prof-pic img {
     width: 150px;
     display: inline-block;
+    border-radius: 50%;
+}
+
+h1 {
+    max-width: fit-content;
+    margin: 0 auto;
 }
 
 h2 {
@@ -519,6 +536,17 @@ h2 {
 
 ul li {
     list-style-type: none;
+}
+
+.poke-img {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 5px;
+}
+
+.pokemonList{
+    text-transform: capitalize;
 }
 
 @media screen and (min-width: 1000px) {
