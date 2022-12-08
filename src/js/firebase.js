@@ -42,7 +42,7 @@ const app = firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 const db = app.firestore();
-// provider.addScope('https://www.googleapis.com/auth/user.birthday.read');
+provider.addScope('https://www.googleapis.com/auth/user.birthday.read');
 
 export {
   db,
