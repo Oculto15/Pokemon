@@ -66,19 +66,22 @@ export async function loadHeaderFooter() {
 
   pokeBall.addEventListener("click", singIn);
 
+
 }
 
 const singIn = () => {
   auth.signInWithPopup(provider).then(result => {
+    console.log(result);
     window.localStorage.setItem('id', result.user.uid);
     window.localStorage.setItem('user', result.user.displayName.split(' ')[0]);
-    window.location.href = 'http://localhost:5173/poketeam/';
+    // window.location.href = 'http://localhost:5173/poketeam/';
+    
   })
 }
 
 const logOut = () => {
   auth.signOut()
-  window.localStorage.setItem('user', '');
+//   window.localStorage.setItem('user', '');
   document.getElementById('logOutText').text = 'none';
   window.location.href = 'http://localhost:5173';
 }

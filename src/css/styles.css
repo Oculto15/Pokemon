@@ -527,6 +527,10 @@ ul li {
     grid-gap: 5px;
 }
 
+.pokemonList{
+    text-transform: capitalize;
+}
+
 @media screen and (min-width: 1000px) {
     .pokemon-detail section {
         display: grid;
