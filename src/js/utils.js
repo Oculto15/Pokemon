@@ -57,9 +57,12 @@ export async function loadHeaderFooter() {
   const logOutUser = document.getElementById('logOut');
   const logOutText = document.getElementById('logOutText');
   const userName = window.localStorage.getItem('user');
+  const fullCompleteName = document.getElementById('fullName')
+  const name = window.localStorage.getItem('full-Name');
   // console.log(userName);
   if (userName) {
     firstName.innerHTML = userName;
+    fullCompleteName.innerHTML = `Name: ${name}`;
     logOutText.innerHTML = "Log Out";
     logOutUser.addEventListener("click", logOut);
   }
@@ -74,6 +77,7 @@ const singIn = () => {
     console.log(result);
     window.localStorage.setItem('id', result.user.uid);
     window.localStorage.setItem('user', result.user.displayName.split(' ')[0]);
+    window.localStorage.setItem('full-Name', result.user.displayName);
     // window.location.href = 'http://localhost:5173/poketeam/';
     
   })
