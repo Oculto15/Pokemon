@@ -36,139 +36,139 @@ export default class PokeList {
     prepareTemplate(template, pokemon) {
 
         if (window.location.href.split('=')[1] == 'fire'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/fire-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/fire-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'flying'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/flying-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/flying-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'ice'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/ice-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/ice-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'water'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/water-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/water-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'ghost'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/ghost-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/ghost-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'fighting'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/fighting-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/fighting-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'normal'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/normal-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/normal-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'psychic'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/psychic-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/psychic-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'dark'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/dark-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/dark-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'steel'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/steel-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/steel-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'fairy'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/fairy-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/fairy-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'bug'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/bug-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/bug-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'electric'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/electric-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/electric-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'dragon'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/dragon-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/dragon-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'grass'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/grass-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/grass-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'poison'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/poison-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/poison-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'ground'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/ground-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/ground-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             
             getDiv.appendChild(image);
         }
         if (window.location.href.split('=')[1] == 'rock'){
-            var image = document.createElement("img");
-            image.setAttribute('src',"../images/rock-icon.png");
-            image.classList.add("icon-abso");
+            var image = document.createElement('img');
+            image.setAttribute('src','../images/rock-icon.png');
+            image.classList.add('icon-abso');
             var getDiv = template.querySelector('.poke-border');
             
             getDiv.appendChild(image);
@@ -180,9 +180,29 @@ export default class PokeList {
         template.querySelector('a').href += pokemon.id;
         template.getElementById('artwork').src = pokemon['sprites']['other']['official-artwork']['front_default'];
         template.getElementById('artwork').alt += pokemon.name;
-        // if(pokemon.types.length > 1) {
-        //     template.querySelector('li').style.backgroundImage = "linear-gradient(125deg, var(--" + pokemon.types[0].type.name + ") 50%,  var(--" + pokemon.types[1].type.name + ") 50%)";
-        // }
+        if(pokemon.types.length > 1) {
+            const type1 = pokemon.types[0].type.name;
+            const type2 = pokemon.types[1].type.name;
+
+            if (window.location.href.split('=')[1] == type1){
+                template.querySelector('li').style.backgroundImage = 'linear-gradient(122deg, var(--' + type1 + ') 50%,  var(--' + type2 + ') 50%)';
+                var image = document.createElement('img');
+                image.setAttribute('src','../images/' + type2 + '-icon.png');
+                image.classList.add('icon-abso2');
+                var getDiv = template.querySelector('.poke-border');
+                
+                getDiv.appendChild(image);
+            }
+            if (window.location.href.split('=')[1] == type2){
+                template.querySelector('li').style.backgroundImage = 'linear-gradient(122deg, var(--' + type2 + ') 50%,  var(--' + type1 + ') 50%)';
+                var image = document.createElement('img');
+                image.setAttribute('src','../images/' + type1 + '-icon.png');
+                image.classList.add('icon-abso2');
+                var getDiv = template.querySelector('.poke-border');
+                
+                getDiv.appendChild(image);
+            }
+        }
         template.querySelector('.card__name').textContent = pokemon.name.replace('-', ' ');
         return template;
     }
