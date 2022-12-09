@@ -56,10 +56,17 @@ export async function loadHeaderFooter() {
   const firstName = document.getElementById('firstName');
   const logOutUser = document.getElementById('logOut');
   const logOutText = document.getElementById('logOutText');
+  const fullCompleteName = document.getElementById('fullName');
+  const photo = document.getElementById('photo-profile');
   const userName = window.localStorage.getItem('user');
+  const name = window.localStorage.getItem('full-Name');
+  const photoProfile = window.localStorage.getItem('photo-prof');
+
   // console.log(userName);
   if (userName) {
     firstName.innerHTML = userName;
+    fullCompleteName.innerHTML = `Name: ${name}`;
+    photo.src = photoProfile;
     logOutText.innerHTML = "Log Out";
     logOutUser.addEventListener("click", logOut);
   }
@@ -74,6 +81,9 @@ const singIn = () => {
     console.log(result);
     window.localStorage.setItem('id', result.user.uid);
     window.localStorage.setItem('user', result.user.displayName.split(' ')[0]);
+    window.localStorage.setItem('full-Name', result.user.displayName);
+    window.localStorage.setItem('photo-prof', result.user.photoURL);
+
     // window.location.href = 'http://localhost:5173/poketeam/';
     
   })

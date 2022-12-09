@@ -49,9 +49,9 @@ body {
     background: url("../images/poke-background.jpeg");
 }
 
-main {
+#poketeam-main-page {
     min-height: 700px;
-    padding: 10px;
+    padding: 40px;
     margin: auto;
     background: url("../images/Background-Pokeball.png");
     background-position: center; /* Center the image */
@@ -70,7 +70,7 @@ img {
 header {
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 20px 10px;
 }
 
 /* Main page style */
@@ -87,7 +87,8 @@ header {
 
 /* MyTeam icon styles */
 #pokeball-animation {
-    filter: drop-shadow(0 -2mm 2mm  crimson);
+    filter: drop-shadow(0 0mm 2mm  crimson);
+    margin: 0 25px;
 }
 
 
@@ -95,7 +96,7 @@ header {
 .logo {
 
     line-height: 60px;
-    width: 245px;
+    /* width: 245px; */
     overflow: hidden;
     display: flex;
     font-size: 30px;
@@ -110,6 +111,7 @@ header {
 .logo a {
     text-decoration: none;
     color: var(--font-body);
+    display: none;
 }
 
 /* utility classes */
@@ -126,14 +128,10 @@ button {
 }
 
 .glow-button {
-    position: relative;
-    padding: .5em .5em;
+    padding: 0.5em 0.5em;
     background: linear-gradient(180deg, rgba(210,11,0,1) 45%, rgba(0,0,0,1) 45% 55%, rgba(255,255,255,1) 55%);
-    color: grey;
-    margin: auto;
     border: 2px solid black;
     border-radius: 50px;
-    /* box-shadow: inset -10px 10px 0 10px #ccc; */
 }
 
 .logOut {
@@ -149,9 +147,6 @@ button {
     border-radius: 20px;
 }
 
-.divider {
-    border-bottom: 2px solid var(--red);
-}
 
 .divider h1 {
     text-transform: capitalize;
@@ -263,9 +258,11 @@ button {
 
 /* pokeball icon styles */
 .myTeam {
-    padding-top: 1em;
-    position: relative;
     text-align: center;
+    /* min-width: 300px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .myTeam svg {
@@ -413,9 +410,13 @@ label {
     background-color: rgb(244, 230, 230);
     width: 200px;
     border-radius: 10px;
-
+    /* margin-left: 40px; */
 }
 
+.center-title{
+    display: flex;
+    justify-content: center;
+}
 
 @keyframes animate {
     from {
@@ -497,23 +498,6 @@ canvas {
     background: rgba(255, 255, 255, 0.401);
 }
 
-@media screen and (min-width: 600px) {
-    body {
-        max-width: 1080px;
-        margin: auto;
-    }
-
-    .pokemon-detail section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #searchName {
-        margin: auto;
-        width: 50%;
-    }
-}
 
 footer {
     font-size: var(--small-font);
@@ -561,6 +545,31 @@ ul li {
 
 .pokemonList{
     text-transform: capitalize;
+}
+
+#firstName, .firstName{
+    text-transform: capitalize;
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+
+
+@media screen and (min-width: 600px) {
+    body {
+        max-width: 1080px;
+        margin: auto;
+    }
+
+    .pokemon-detail section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo a{
+        display: block;
+    }
 }
 
 @media screen and (min-width: 1000px) {
