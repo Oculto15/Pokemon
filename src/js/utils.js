@@ -76,7 +76,7 @@ const singIn = () => {
     window.localStorage.setItem('full-Name', result.user.displayName);
     window.localStorage.setItem('photo-prof', result.user.photoURL);
 
-    // window.location.href = 'http://localhost:5173/poketeam/';
+    window.location.href = document.URL;
   })
 
 }
@@ -89,6 +89,7 @@ const logOut = () => {
   window.localStorage.setItem('full-Name', ' ');
   window.localStorage.setItem('photo-prof', ' ');
   document.getElementById('logOut').style.display = 'none';
+  window.location.href = document.URL;
   //window.location.href = 'http://localhost:5173';
 }
 

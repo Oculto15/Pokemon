@@ -144,4 +144,19 @@ async function addPokemon() {
     pokemonId: pokemonId,
     pokemonType: pokemonType
   });
+  console.log(pokemonType);
+  await db.collection('users').doc(id).collection('team1').doc(String(pokemonId)).set({
+    pokemonId: pokemonId,
+    pokemonType: pokemonType
+  });
+  console.log(pokemonType);
+  await db.collection('users').doc(id).collection('team2').doc(String(pokemonId)).set({
+    pokemonId: pokemonId,
+    pokemonType: pokemonType
+  });
+  console.log(pokemonType);
+  await db.collection('users').doc(id).collection('team3').doc(String(pokemonId)).set({
+    pokemonId: pokemonId,
+    pokemonType: pokemonType
+  });
 }
