@@ -1,8 +1,8 @@
-import { db } from "./firebase";
-import { loadHeaderFooter } from "./utils.js";
+import { db } from './firebase';
+import { loadHeaderFooter } from './utils.js';
 
-const UID = window.localStorage.getItem("id");
-const ulElement = document.getElementById("team");
+const UID = window.localStorage.getItem('id');
+const ulElement = document.getElementById('team');
 
 loadHeaderFooter();
 
@@ -46,9 +46,9 @@ async function displayTeam() {
     // console.log(`These are our pokemon ${pokemons}`);
     pokemons.forEach((pokemon, index) => {
         if (index <= 5) {
-            const item = document.createElement("li");
-            item.classList.add("pokemonList");
-            item.innerHTML =`- ${pokemon}`;
+            const item = document.createElement('li');
+            item.classList.add('pokemonList');
+            item.innerHTML = `- ${pokemon}`;
             ulElement.append(item);
         }
     });

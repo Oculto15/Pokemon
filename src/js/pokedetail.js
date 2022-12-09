@@ -1,5 +1,9 @@
-import { loadHeaderFooter } from "./utils.js";
-import { db } from "./firebase";
+import {
+  loadHeaderFooter
+} from './utils.js';
+import {
+  db
+} from './firebase';
 const id = window.localStorage.getItem('id');
 // const addButton = document.getElementById('addToTeam');
 let pokemonId = 0;
@@ -23,70 +27,67 @@ export default class PokeDetails {
     this.getPokeTypes();
     this.getPokeStats();
     if (this.types.length > 1) {
-      document.querySelector("main").innerHTML = this.renderPokeDetails();
+      document.querySelector('main').innerHTML = this.renderPokeDetails();
       addButton = document.getElementById('addToTeam');
       addButton.addEventListener('click', addPokemon);
     } else {
-      document.querySelector("main").innerHTML = this.renderPokeDetail();
+      document.querySelector('main').innerHTML = this.renderPokeDetail();
       addButton = document.getElementById('addToTeam');
       addButton.addEventListener('click', addPokemon);
     }
-    if(!id){
+    if (!id) {
       addButton.style.display = 'none';
-    }
-    else{
+    } else {
       addButton.style.display = 'block';
     }
   }
 
   renderPokeDetails() {
-    
-    // Image path to gif
-    // <img src="${this.pokemon['sprites']['versions']['generation-v']['black-white']['animated']['front_default']}" alt="${this.pokemon.name}"/>
-    return `<section class="pokemon-detail">
-      <h1 class="divider">${this.pokemon.name.replace('-', ' ')}</h1>
-      <div class='imagenB'>
-      <img src="${this.pokemon['sprites']['other']['official-artwork']['front_default']}" alt="${this.pokemon.name}" style="background-image: linear-gradient(135deg, var(--${this.types[0]}) 50%,  var(--${this.types[1]}) 50%);"/>
-      </div>
-      
-      <p>Abilities: <span class="pokemon-card__abilities">${this.abilities}</span></p>
 
-      <div class='tipos'> <p>Type: <span class="pokemon__types Type ${this.types[0]}">${this.types[0]}</span>
-      <span class="pokemon__types Type ${this.types[1]}">${this.types[1]}</span>
+    // Image path to gif
+    // <img src='${this.pokemon['sprites']['versions']['generation-v']['black-white']['animated']['front_default']}' alt='${this.pokemon.name}'/>
+    return `<section class='pokemon-detail'>
+      <h1 class='divider'>${this.pokemon.name.replace('-', ' ')}</h1>
+      <div class='imagenB'>
+      <img src='${this.pokemon['sprites']['other']['official-artwork']['front_default']}' alt='${this.pokemon.name}' style='background-image: linear-gradient(135deg, var(--${this.types[0]}) 50%,  var(--${this.types[1]}) 50%);'/>
+      </div>
+      <p>Abilities: <span class='pokemon-card__abilities'>${this.abilities}</span></p>
+
+      <div class='tipos'> <p>Type: <span class='pokemon__types Type ${this.types[0]}'>${this.types[0]}</span>
+      <span class='pokemon__types Type ${this.types[1]}'>${this.types[1]}</span>
       </p>
       </div>
 
-      <div id="container">
-      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+      <div id='container'>
+      <canvas id='myChart' style='width:100%;max-width:600px'></canvas>
       </div>
-      
-      <p class="pokemon__description">The description goes here</p>
-      <div class="pokemon-detail__add">
-      <button  id="addToTeam" data-id="${this.pokemon.Id}" class="glow-button">
+      <p class='pokemon__description'>The description goes here</p>
+      <div class='pokemon-detail__add'>
+      <button  id='addToTeam' data-id='${this.pokemon.Id}' class='glow-button'>
       <span class='btnText'>Add to Team</span>
       </button>
       </div></section>`;
   }
 
   renderPokeDetail() {
-    return `<section class="pokemon-detail"> 
-      <h1 class="divider">${this.pokemon.name.replace('-', ' ')}</h1>
+    return `<section class='pokemon-detail'> 
+      <h1 class='divider'>${this.pokemon.name.replace('-', ' ')}</h1>
       <div class='imagenB'>
-      <img class="${this.types[0]}" src="${this.pokemon['sprites']['other']['official-artwork']['front_default']}" alt="${this.pokemon.name}"/>
+      <img class='${this.types[0]}' src='${this.pokemon['sprites']['other']['official-artwork']['front_default']}' alt='${this.pokemon.name}'/>
       </div>
       
-      <p>Abilities: <span class="pokemon-card__abilities">${this.abilities}</span></p>
+      <p>Abilities: <span class='pokemon-card__abilities'>${this.abilities}</span></p>
 
-      <div class='tipos'> <p>Type: <span class="pokemon__types Type ${this.types[0]}">${this.types[0]}</span>
+      <div class='tipos'> <p>Type: <span class='pokemon__types Type ${this.types[0]}'>${this.types[0]}</span>
       </p></div>
 
-      <div id="container">
-      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+      <div id='container'>
+      <canvas id='myChart' style='width:100%;max-width:600px'></canvas>
       </div>
 
-      <p class="pokemon__description">The description goes here</p>
-      <div class="pokemon-detail__add">
-      <button id="addToTeam" data-id="${this.pokemon.Id}" class="glow-button">
+      <p class='pokemon__description'>The description goes here</p>
+      <div class='pokemon-detail__add'>
+      <button id='addToTeam' data-id='${this.pokemon.Id}' class='glow-button'>
       <span class='btnText'>Add to Team</span>
       </button>
       </div></section>`;
@@ -129,15 +130,18 @@ export default class PokeDetails {
   renderList(list, template, outputId) {
     const element = document.querySelector(outputId);
 
-    element.innerHTML = "";
+    element.innerHTML = '';
     const htmlString = list.map((item) => template(item));
-    element.innerHTML = htmlString.join("");
+    element.innerHTML = htmlString.join('');
   }
 
 }
 
 
-async function addPokemon(){
+async function addPokemon() {
   console.log(pokemonType);
-  await db.collection('users').doc(id).collection('team').doc(String(pokemonId)).set({pokemonId : pokemonId, pokemonType : pokemonType});
+  await db.collection('users').doc(id).collection('team').doc(String(pokemonId)).set({
+    pokemonId: pokemonId,
+    pokemonType: pokemonType
+  });
 }

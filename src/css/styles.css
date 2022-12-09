@@ -134,8 +134,8 @@ button {
     border-radius: 50px;
 }
 
-.logOut {
-
+#logOut {
+  display: none;
 }
 
 .btnText {
