@@ -83,8 +83,8 @@ const logOut = () => {
   window.localStorage.setItem('full-Name', ' ');
   window.localStorage.setItem('photo-prof', ' ');
   document.getElementById('logOut').style.display = 'none';
-  window.location.href = document.URL;
-  //window.location.href = 'http://localhost:5173';
+  //window.location.href = document.URL;
+  window.location.href = 'http://localhost:5173';
 }
 
 export function renderListWithTemplate(template, parent, list, callback) {
