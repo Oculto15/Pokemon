@@ -11,15 +11,6 @@ function convertToText(res) {
   }
 }
 
-// set a listener for both touchend and click
-export function setClick(selector, callback) {
-  qs(selector).addEventListener('touchend', (event) => {
-    event.preventDefault();
-    callback();
-  });
-  qs(selector).addEventListener('click', callback);
-}
-
 export function getParam(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
@@ -79,7 +70,7 @@ export async function loadHeaderFooter() {
 
 const singIn = () => {
   auth.signInWithPopup(provider).then(result => {
-    console.log(result.user.photoURL);
+    //console.log(result.user.photoURL);
     window.localStorage.setItem('id', result.user.uid);
     window.localStorage.setItem('user', result.user.displayName.split(' ')[0]);
     window.localStorage.setItem('full-Name', result.user.displayName);
