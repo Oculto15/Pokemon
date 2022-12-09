@@ -17,18 +17,17 @@ export default class PokeTrainer {
   async init() {
 
     // If there is trainer data in local storage add it to the correct UI elements
-    // const fullCompleteName = document.getElementById('fullName');
-    // const photo = document.getElementById('photo-profile');
-    // const userName = window.localStorage.getItem('user');
-    // const name = window.localStorage.getItem('full-Name');
-    // const photoProfile = window.localStorage.getItem('photo-prof');
-    // const firstName = document.getElementById('firstName');
+    const fullCompleteName = document.getElementById('fullName');
+    const photo = document.getElementById('photo-profile');
+    const userName = window.localStorage.getItem('user');
+    const name = window.localStorage.getItem('full-Name');
+    const photoProfile = window.localStorage.getItem('photo-prof');
+    const firstName = document.getElementById('firstName');
 
-    // if (userName != ' ') {
-    //   firstName.innerHTML = userName;
-    //   fullCompleteName.innerHTML = `Name: ${name}`;
-    //   photo.src = photoProfile;
-    // }
+    if (userName != ' ') {
+      fullCompleteName.innerHTML = `Name: ${name}`;
+      photo.src = photoProfile;
+    }
     // Check the database to see if we have collections for team 1,2,and 3
     
     // If this user does not have those collections, create them

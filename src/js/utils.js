@@ -47,18 +47,12 @@ export async function loadHeaderFooter() {
   const firstName = document.getElementById('firstName');
   const logOutUser = document.getElementById('logOut');
   const logOutText = document.getElementById('logOutText');
-  const fullCompleteName = document.getElementById('fullName');
-  const photo = document.getElementById('photo-profile');
   const userName = window.localStorage.getItem('user');
-  const name = window.localStorage.getItem('full-Name');
-  const photoProfile = window.localStorage.getItem('photo-prof');
 
   // console.log(userName);
   // We want to display user information only if there is information to display
   if (userName != ' ') {
     firstName.innerHTML = userName;
-    fullCompleteName.innerHTML = `Name: ${name}`;
-    photo.src = photoProfile;
     logOutText.innerHTML = 'Log Out';
     logOutUser.addEventListener('click', logOut);
     document.getElementById('logOut').style.display = 'block';
