@@ -67,11 +67,11 @@ export async function loadHeaderFooter() {
     firstName.innerHTML = userName;
     fullCompleteName.innerHTML = `Name: ${name}`;
     photo.src = photoProfile;
-    logOutText.innerHTML = "Log Out";
-    logOutUser.addEventListener("click", logOut);
+    logOutText.innerHTML = 'Log Out';
+    logOutUser.addEventListener('click', logOut);
   }
 
-  pokeBall.addEventListener("click", singIn);
+  pokeBall.addEventListener('click', singIn);
 
 
 }
@@ -85,13 +85,13 @@ const singIn = () => {
     window.localStorage.setItem('photo-prof', result.user.photoURL);
 
     // window.location.href = 'http://localhost:5173/poketeam/';
-    
+
   })
 }
 
 const logOut = () => {
   auth.signOut()
-//   window.localStorage.setItem('user', '');
+  //   window.localStorage.setItem('user', '');
   document.getElementById('logOutText').text = 'none';
   window.location.href = 'http://localhost:5173';
 }
