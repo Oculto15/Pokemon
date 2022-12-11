@@ -53,8 +53,8 @@ export default class PokeDetails {
       </div>
       <p>Abilities: <span class='pokemon-card__abilities'>${this.abilities}</span></p>
 
-      <div class='tipos'> <p>Type: <span class='pokemon__types Type ${this.types[0]}'>${this.types[0]}</span>
-      <span class='pokemon__types Type ${this.types[1]}'>${this.types[1]}</span>
+      <div class='tipos'> <p>Type: <a href='http://localhost:5173/pokelist/index.html?type=${this.types[0]}' class='pokemon__types Type ${this.types[0]}'>${this.types[0]}</a>
+      <a href='http://localhost:5173/pokelist/index.html?type=${this.types[1]}' class='pokemon__types Type ${this.types[1]}'>${this.types[1]}</a>
       </p>
       </div>
 
@@ -78,7 +78,8 @@ export default class PokeDetails {
       
       <p>Abilities: <span class='pokemon-card__abilities'>${this.abilities}</span></p>
 
-      <div class='tipos'> <p>Type: <span class='pokemon__types Type ${this.types[0]}'>${this.types[0]}</span>
+      <div class='tipos'> 
+      <p>Type: <a href='http://localhost:5173/pokelist/index.html?type=${this.types[0]}' class='pokemon__types Type ${this.types[0]}'>${this.types[0]}</a>
       </p></div>
 
       <div id='container'>
@@ -139,23 +140,29 @@ export default class PokeDetails {
 
 
 async function addPokemon() {
-  console.log(pokemonType);
-  await db.collection('users').doc(id).collection('team').doc(String(pokemonId)).set({
-    pokemonId: pokemonId,
-    pokemonType: pokemonType
-  });
-  console.log(pokemonType);
+  // await db.collection('users').doc(id).collection('team').doc(String(pokemonId)).set({
+  //   pokemonId: pokemonId,
+  //   pokemonType: pokemonType
+  // });
+
   await db.collection('users').doc(id).collection('team1').doc(String(pokemonId)).set({
     pokemonId: pokemonId,
     pokemonType: pokemonType
   });
-  console.log(pokemonType);
-  await db.collection('users').doc(id).collection('team2').doc(String(pokemonId)).set({
-    pokemonId: pokemonId,
-    pokemonType: pokemonType
-  });
-  console.log(pokemonType);
-  await db.collection('users').doc(id).collection('team3').doc(String(pokemonId)).set({
+
+  // await db.collection('users').doc(id).collection('team2').doc(String(pokemonId)).set({
+  //   pokemonId: pokemonId,
+  //   pokemonType: pokemonType
+  // });
+
+  // await db.collection('users').doc(id).collection('team3').doc(String(pokemonId)).set({
+  //   pokemonId: pokemonId,
+  //   pokemonType: pokemonType
+  // });
+}
+
+async function deletePokemon() {
+  await db.collection('users').doc(id).collection('team1').doc(String(pokemonId)).delete({
     pokemonId: pokemonId,
     pokemonType: pokemonType
   });
