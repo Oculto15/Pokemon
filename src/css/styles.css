@@ -32,6 +32,7 @@
     --font-base: 18px;
     --small-font: 0.8em;
     --large-font: 1.2em;
+    --title-font: 1.8em
 }
 
 * {
@@ -51,7 +52,7 @@ body {
 
 #poketeam-main-page {
     min-height: 700px;
-    padding: 40px;
+    padding: 30px;
     margin: auto;
     background: url("../images/Background-Pokeball.png");
     background-position: center; /* Center the image */
@@ -71,9 +72,26 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 20px 10px;
+    background-color: #386ceb;
 }
 
 /* Main page style */
+
+.frontPage {
+    padding: 5px 10px;
+}
+
+.frontPage h2 {
+    margin: 10px 0;
+}
+
+.frontPage p {
+    margin: 0 0 10px;
+}
+
+.frontPage p:first-of-type {
+    margin: 10px 0;
+}
 
 .searchName {
     display: flex;
@@ -89,18 +107,20 @@ header {
 #pokeball-animation {
     filter: drop-shadow(0 0mm 2mm  crimson);
     margin: 0 25px;
+    /* display: none; */
 }
 
 
 /* Logo styling */
 .logo {
 
-    line-height: 60px;
+    /* line-height: 60px; */
     /* width: 245px; */
     overflow: hidden;
     display: flex;
     font-size: 30px;
     text-align: right;
+    align-items: center;
 }
 
 .logo img {
@@ -109,9 +129,9 @@ header {
 }
 
 .logo a {
+    display: flex;
     text-decoration: none;
     color: var(--font-body);
-    display: none;
 }
 
 /* utility classes */
@@ -258,11 +278,12 @@ button {
 
 /* pokeball icon styles */
 .myTeam {
+    flex-wrap: wrap;
     text-align: center;
     /* min-width: 300px; */
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .myTeam svg {
@@ -428,6 +449,12 @@ label {
     }
 }
 
+/* Pokemon Details */
+
+.pokemon-detail {
+    padding: 20px 10px;
+}
+
 .pokemon-card {
     /* background: linear-gradient(#a8a878,#8a8a59); */
     flex: 1 1 45%;
@@ -523,9 +550,53 @@ footer {
     border-radius: 50%;
 }
 
+#team {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 5px;
+    justify-content: center;
+}
+
+.small-card {
+    width: 300px;
+    height: 200px;
+}
+
+.pokemon-card-small {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 290px;
+    max-width: 290px;
+    height: 190px;
+}
+
+.pokemon-card-small a {
+    text-decoration: none;
+    color: #000;
+}
+
+.pokemon-card-small a p {
+    background-color: #FFF;
+    border-radius: 7px;
+}
+
+
+.poke-border::before .small-card {
+    width: 100px;
+    height: 200%;
+}
+
+.deleteFromTeam a {
+    text-decoration: none;
+    color: #000;
+}
+
 h1 {
+    font-size: var(--title-font);
     max-width: fit-content;
     margin: 0 auto;
+    text-align: center;
 }
 
 h2 {
@@ -552,6 +623,7 @@ ul li {
     text-decoration: none;
     color: black;
     font-size: 24px;
+    padding: 15px;
 }
 
 
@@ -568,7 +640,7 @@ ul li {
     }
 
     .logo a{
-        display: block;
+        display: flex;
     }
 }
 
