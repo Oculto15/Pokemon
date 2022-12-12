@@ -53,12 +53,12 @@ export async function loadHeaderFooter() {
   // We want to display user information only if there is information to display
   if (userName != ' ') {
     firstName.innerHTML = userName;
-    logOutText.innerHTML = 'Log Out';
+    logOutText.innerHTML = 'Get out';
     logOutUser.addEventListener('click', logOut);
     document.getElementById('logOut').style.display = 'block';
   } else{
     logOutUser.addEventListener('click', singIn);
-    logOutText.innerHTML = 'Log In';
+    logOutText.innerHTML = 'Get in';
     document.getElementById('logOut').style.display = 'block';
   }
 

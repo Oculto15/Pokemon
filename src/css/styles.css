@@ -152,10 +152,32 @@ button {
 }
 
 .glow-button {
-    padding: 0.5em 0.5em;
+    padding: 1em 0.5em;
     background: linear-gradient(180deg, rgba(210, 11, 0, 1) 45%, rgba(0, 0, 0, 1) 45% 55%, rgba(255, 255, 255, 1) 55%);
     border: 2px solid black;
-    border-radius: 50px;
+    border-radius: 100px;
+}
+
+.glow-button:hover {
+    animation: shake 1.25s cubic-bezier(.36, .07, .19, .97) 1;
+}
+
+.glow-button .btnText:hover {
+    animation: blink .5s alternate 2;
+}
+
+@keyframes blink {
+    from { background: #eee;}
+    to { background: #e74c3c; }
+}
+
+@keyframes shake {
+    0% { transform: translate(0, 0) rotate(0); }
+    20% { transform: translate(-10px, 0) rotate(-20deg); }
+    30% { transform: translate(10px, 0) rotate(20deg); }
+    50% { transform: translate(-10px, 0) rotate(-10deg); }
+    60% { transform: translate(10px, 0) rotate(10deg); }
+    100% { transform: translate(0, 0) rotate(0); }
 }
 
 #logOut {
