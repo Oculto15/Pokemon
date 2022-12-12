@@ -212,10 +212,120 @@ button {
     text-transform: capitalize;
 }
 
+.Qlink {
+    border: 1px solid #000;
+    border-radius: 5px;
+    height: 2em;
+    width: 5rem;
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+    text-shadow: 1px 1px 1px #333;
+    padding: 0 45px;
+}
+
 /* Quick links */
 .charizard {
     background: linear-gradient(135deg, var(--fire) 50%, var(--flying) 50%);
 }
+.charizard:hover::after {
+    content: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png);
+    display: block;
+    position: absolute;
+    background: linear-gradient(135deg, var(--fire) 50%, var(--flying) 50%);
+}
+
+.gengar {
+    background: linear-gradient(135deg, var(--ghost) 50%, var(--poison) 50%);
+}
+.gengar:hover::after {
+    content: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png);
+    display: block;
+    position: absolute;
+    background: linear-gradient(135deg, var(--ghost) 50%, var(--poison) 50%);
+}
+
+.arcanine {
+    background: linear-gradient(#f08030, #dd6610);
+}
+.arcanine:hover::after {
+    content: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/59.png);
+    display: block;
+    position: absolute;
+    background: linear-gradient(#f08030, #dd6610);
+}
+
+.bulbasaur {
+    background: linear-gradient(135deg, var(--grass) 50%, var(--poison) 50%);
+}
+.bulbasaur:hover::after {
+    content: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png);
+    display: block;
+    position: absolute;
+    background: linear-gradient(135deg, var(--grass) 50%, var(--poison) 50%);
+}
+
+.eevee {
+    background: linear-gradient(#a8a878, #8a8a59);
+}
+.eevee:hover::after {
+    content: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png);
+    display: block;
+    position: absolute;
+    background: linear-gradient(#a8a878, #8a8a59);
+}
+
+.dragonite {
+    background: linear-gradient(135deg, var(--dragon) 50%, var(--flying) 50%);
+}
+.dragonite:hover::after {
+    content: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png);
+    display: block;
+    position: absolute;
+    background: linear-gradient(135deg, var(--dragon) 50%, var(--flying) 50%);
+}
+
+.squirtle {
+    background: linear-gradient(#6890f0, #386ceb);
+}
+.squirtle:hover::after {
+    content: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png);
+    display: block;
+    position: absolute;
+    background: linear-gradient(#6890f0, #386ceb);
+}
+
+.ninetales {
+    background: linear-gradient(#f08030, #dd6610);
+}
+.ninetales:hover::after {
+    content: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/38.png);
+    display: block;
+    position: absolute;
+    background: linear-gradient(#f08030, #dd6610);
+}
+
+.snorlax {
+    background: linear-gradient(#a8a878, #8a8a59);
+}
+.snorlax:hover::after {
+    content: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png);
+    display: block;
+    position: absolute;
+    background: linear-gradient(#a8a878, #8a8a59);
+}
+
+.blastoise {
+    background: linear-gradient(#6890f0, #386ceb);
+}
+.blastoise:hover::after {
+    content: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png);
+    display: block;
+    position: absolute;
+    background: linear-gradient(#6890f0, #386ceb);
+}
+
+
 
 .Type {
     color: #FFF;
