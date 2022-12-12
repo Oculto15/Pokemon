@@ -63,6 +63,12 @@ body {
     /* Resize the background image to cover the entire container */
 }
 
+section {
+    background-color: #D3D3D3;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 #main-title {
     text-transform: none;
 }
