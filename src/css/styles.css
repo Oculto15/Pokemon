@@ -55,9 +55,12 @@ body {
     padding: 10px;
     margin: auto;
     background: url("../images/Background-Pokeball.png");
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
 }
 
 #main-title {
@@ -100,12 +103,13 @@ header {
 
 .searchName input {
     min-height: 30px;
+    max-width: 300px;
     margin: 10px;
 }
 
 /* MyTeam icon styles */
 #pokeball-animation {
-    filter: drop-shadow(0 0mm 2mm  crimson);
+    filter: drop-shadow(0 0mm 2mm crimson);
     margin: 0 25px;
     display: none;
 }
@@ -149,13 +153,13 @@ button {
 
 .glow-button {
     padding: 0.5em 0.5em;
-    background: linear-gradient(180deg, rgba(210,11,0,1) 45%, rgba(0,0,0,1) 45% 55%, rgba(255,255,255,1) 55%);
+    background: linear-gradient(180deg, rgba(210, 11, 0, 1) 45%, rgba(0, 0, 0, 1) 45% 55%, rgba(255, 255, 255, 1) 55%);
     border: 2px solid black;
     border-radius: 50px;
 }
 
 #logOut {
-  display: none;
+    display: none;
 }
 
 .btnText {
@@ -434,7 +438,7 @@ label {
     /* margin-left: 40px; */
 }
 
-.center-title{
+.center-title {
     display: flex;
     justify-content: center;
 }
@@ -538,15 +542,22 @@ footer {
 }
 
 .trainer-card {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 }
+
 .myTeam::before {
-    animation:infinite;
+    animation: infinite;
 }
 
 .prof-pic img {
+    display: flex;
+    margin: auto;
     width: 150px;
-    display: inline-block;
     border-radius: 50%;
 }
 
@@ -633,11 +644,12 @@ ul li {
     grid-gap: 5px;
 }
 
-.pokemonList{
+.pokemonList {
     text-transform: capitalize;
 }
 
-#firstName, .firstName{
+#firstName,
+.firstName {
     text-transform: capitalize;
     text-decoration: none;
     color: black;
@@ -658,8 +670,12 @@ ul li {
         align-items: center;
     }
 
-    .logo a{
+    .logo a {
         display: flex;
+    }
+
+    .trainer-card {
+        flex-direction: row-reverse;
     }
 }
 

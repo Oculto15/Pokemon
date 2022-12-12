@@ -2,6 +2,12 @@ import {
   db
 } from './firebase';
 
+const id = window.localStorage.getItem('id');
+// const addButton = document.getElementById('addToTeam');
+let pokemonId = 0;
+let pokemonType = '';
+let deleteButton = null;
+
 export default class PokeTrainer {
   constructor(userID) {
     this.userID = userID;
@@ -54,6 +60,9 @@ export default class PokeTrainer {
     // Chaging the team name with double click
     const teamName1 = document.querySelector('#team1-title');
     teamName1.addEventListener('dblclick', this.changeTeamName);
+
+    deleteButton = document.querySelector('.deletePokemon');
+    deleteButton.addEventListener('click', this.deletePokemon);
   }
 
   async getTeam(teamNumber) {
@@ -94,7 +103,7 @@ export default class PokeTrainer {
     const pokemons = team;
     // console.log(`These are our pokemon ${pokemons}`);
     pokemons.forEach((pokemon, index) => {
-      if (index <= 5) {
+      if (index <= 50) {
 
         // Created the main div
         const divMain = document.createElement('div');
@@ -132,13 +141,14 @@ export default class PokeTrainer {
         const nameLink = document.createElement('a');
         nameLink.href += `http://localhost:5173/pokedetails/index.html?pokemon=${pokemon.id}`;
         const name = document.createElement('p');
-        name.innerHTML = `${pokemon.name}`;
+        name.innerHTML = `${pokemon.name.replace('-', ' ')}`;
 
         // We create a second div for the option to delete Pokemon
         const div2 = document.createElement('div');
         div2.classList.add('deleteFromTeam');
         
         const deleteLink = document.createElement('a');
+        deleteLink.classList.add(`deletePokemon`); 
         deleteLink.href += `${pokemon.id}`;
         const deletePokemon = document.createElement('p');
         deletePokemon.innerHTML = `Delete from Team`;
@@ -158,6 +168,13 @@ export default class PokeTrainer {
         divMain.append(div2);
 
       }
+    });
+  }
+
+  async  deletePokemon() {
+    await db.collection('users').doc(id).collection('team1').doc(String(pokemonId)).delete({
+      pokemonId: pokemonId,
+      pokemonType: pokemonType
     });
   }
 
