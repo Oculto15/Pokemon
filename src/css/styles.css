@@ -212,6 +212,11 @@ button {
     text-transform: capitalize;
 }
 
+/* Quick links */
+.charizard {
+    background: linear-gradient(135deg, var(--fire) 50%, var(--flying) 50%);
+}
+
 .Type {
     color: #FFF;
     border: 1px solid #000;
