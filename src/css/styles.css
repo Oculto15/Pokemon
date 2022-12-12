@@ -81,12 +81,13 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 20px 10px;
-    background-color: #386ceb;
+    /* background-color: #386ceb; */
+    background-image: url(../images/header-background.jpg);
 }
 
 .header-title {
     font-family: 'Pokemon Solid', sans-serif;
-    color: rgba(210, 11, 0, 1);
+    color: rgb(224, 3, 40);
     padding: 0;
 }
 
