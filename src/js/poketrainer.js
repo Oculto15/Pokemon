@@ -103,7 +103,7 @@ export default class PokeTrainer {
     const pokemons = team;
     // console.log(`These are our pokemon ${pokemons}`);
     pokemons.forEach((pokemon, index) => {
-      if (index <= 50) {
+      if (index <= 5) {
 
         // Created the main div
         const divMain = document.createElement('div');
