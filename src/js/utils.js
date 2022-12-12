@@ -43,7 +43,7 @@ export async function loadHeaderFooter() {
   const footerElement = document.getElementById('main-footer');
   renderWithTemplate(header, headerElement);
   renderWithTemplate(footer, footerElement);
-  const pokeBall = document.getElementById('pokeball-animation');
+  // const pokeBall = document.getElementById('pokeball-animation');
   const firstName = document.getElementById('firstName');
   const logOutUser = document.getElementById('logOut');
   const logOutText = document.getElementById('logOutText');
@@ -57,7 +57,9 @@ export async function loadHeaderFooter() {
     logOutUser.addEventListener('click', logOut);
     document.getElementById('logOut').style.display = 'block';
   } else{
-    pokeBall.addEventListener('click', singIn);
+    logOutUser.addEventListener('click', singIn);
+    logOutText.innerHTML = 'Log In';
+    document.getElementById('logOut').style.display = 'block';
   }
 
 }

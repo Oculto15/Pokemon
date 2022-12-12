@@ -107,7 +107,7 @@ header {
 #pokeball-animation {
     filter: drop-shadow(0 0mm 2mm  crimson);
     margin: 0 25px;
-    /* display: none; */
+    display: none;
 }
 
 
