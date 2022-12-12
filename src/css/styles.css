@@ -52,7 +52,7 @@ body {
 
 #poketeam-main-page {
     min-height: 700px;
-    padding: 30px;
+    padding: 10px;
     margin: auto;
     background: url("../images/Background-Pokeball.png");
     background-position: center; /* Center the image */
@@ -553,20 +553,24 @@ footer {
 #team {
     display: flex;
     flex-wrap: wrap;
-    margin: 0;
-    padding: 5px;
+    margin: auto;
+    padding: 15px 5px;
     justify-content: center;
+    max-width: 650px;
+    /* border: #1753E3 2px solid;
+    border-radius: 15px; */
 }
 
 .small-card {
-    width: 280px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
+    margin: 0 5px;
 }
 
 .small-card::before {
     content: "";
     position: absolute;
-    width: 100px;
+    width: 50%;
     height: 200%;
     background-color: rgb(118, 110, 110);
     animation: animate 4s linear infinite;
@@ -574,9 +578,10 @@ footer {
 
 .pokemon-card-small {
     display: grid;
-    width: 270px;
-    max-width: 270px;
-    height: 170px;
+    width: 150px;
+    max-width: 250px;
+    height: 150px;
+    justify-content: center;
 }
 
 .pokemon-card-small a {
@@ -589,14 +594,19 @@ footer {
     border-radius: 7px;
 }
 
-
-.poke-border::before .small-card {
+.pokemon-card-small a:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100px;
-    height: 200%;
+    height: 100px;
+    margin: auto;
+
 }
 
 .deleteFromTeam a {
     text-decoration: none;
+    text-align: center;
     color: #000;
 }
 
@@ -604,6 +614,7 @@ h1 {
     font-size: var(--title-font);
     max-width: fit-content;
     margin: 0 auto;
+    padding: 15px;
     text-align: center;
 }
 
