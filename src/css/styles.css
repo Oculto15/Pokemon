@@ -173,6 +173,7 @@ button {
 
 .glow-button:hover {
     animation: shake 1.25s cubic-bezier(.36, .07, .19, .97) 1;
+    cursor: pointer;
 }
 
 .glow-button .btnText:hover {
