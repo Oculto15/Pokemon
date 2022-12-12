@@ -62,6 +62,15 @@ export default class PokeDetails {
       <canvas id='myChart' style='width:100%;max-width:600px'></canvas>
       </div>
       <p class='pokemon__description'>The description goes here</p>
+      <div class='pokemon-detail__teamSelect'>
+      <p> Select a Team:
+        <select id="teamSelect">
+            <option value="team1">Team 1</option>
+            <option value="team2">Team 2</option>
+            <option value="team3">Team 3</option>
+        </select>
+      </p>
+      </div>
       <div class='pokemon-detail__add'>
       <button  id='addToTeam' data-id='${this.pokemon.Id}' class='glow-button'>
       <span class='btnText'>Add to Team</span>
@@ -87,11 +96,22 @@ export default class PokeDetails {
       </div>
 
       <p class='pokemon__description'>The description goes here</p>
+      <div class='pokemon-detail__teamSelect'>
+      <p> Select a Team:
+          <select id="teamSelect">
+            <option value="team1">Team 1</option>
+            <option value="team2">Team 2</option>
+            <option value="team3">Team 3</option>
+          </select>
+      </p>
+      </div>
       <div class='pokemon-detail__add'>
       <button id='addToTeam' data-id='${this.pokemon.Id}' class='glow-button'>
       <span class='btnText'>Add to Team</span>
       </button>
-      </div></section>`;
+      </div>
+      
+      </section>`;
   }
 
   getPokeAbilities() {
@@ -140,25 +160,35 @@ export default class PokeDetails {
 
 
 async function addPokemon() {
-  // await db.collection('users').doc(id).collection('team').doc(String(pokemonId)).set({
-  //   pokemonId: pokemonId,
-  //   pokemonType: pokemonType
-  // });
 
-  await db.collection('users').doc(id).collection('team1').doc(String(pokemonId)).set({
-    pokemonId: pokemonId,
-    pokemonType: pokemonType
-  });
+  // Get the value from the select element on the page
+  const selectElement = document.querySelector('#teamSelect');
+  const team = selectElement.value;
 
-  // await db.collection('users').doc(id).collection('team2').doc(String(pokemonId)).set({
-  //   pokemonId: pokemonId,
-  //   pokemonType: pokemonType
-  // });
-
-  // await db.collection('users').doc(id).collection('team3').doc(String(pokemonId)).set({
-  //   pokemonId: pokemonId,
-  //   pokemonType: pokemonType
-  // });
+  // Check if team is full
+  const pokemonIds = [];
+  await db
+    .collection(`users/${id}/${team}`)
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const item = doc.data();
+        pokemonIds.push(item.pokemonId);
+        // console.log(item.pokemonId);
+        // console.log(`${doc.id} => ${doc.data()}`);
+      });
+    });
+  console.log(`This is the detail page pokemonIDs ${pokemonIds}`);
+  if (pokemonIds.length >= 6) {
+    alert('Your team is full. Consider deleting a member first.');
+  } else {
+    // Add the pokemon to the correct team
+    await db.collection('users').doc(id).collection(team).doc(String(pokemonId)).set({
+      pokemonId: pokemonId,
+      pokemonType: pokemonType
+    });
+    alert(`Added pokemon to team`);
+  }
 }
 
 async function deletePokemon() {

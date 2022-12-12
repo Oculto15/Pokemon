@@ -764,4 +764,8 @@ ul li {
     .pokemon-detail__add {
         grid-column: 1/3;
     }
+
+    .pokemon-detail__teamSelect{
+      grid-column: 1/3;
+    }
 }

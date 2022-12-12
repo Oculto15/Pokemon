@@ -1,8 +1,8 @@
-# sleepoutside
+# Pokemon
 
 ## Description
 
-Use this as a starting point to complete the WDD 330 team activity: the SleepOutside web application. It scaffolds out a simple web app with Vite support to bundle up our assets.
+This is Team 4's Final Project for WDD 330. We have created a website for Pokemon lovers of all ages. You can search for your favourite pokemon by name or by type. You are also able to login with your Google Account and save your favourite pokemon to 3 different teams.
 
 ## Prerequisites
 
